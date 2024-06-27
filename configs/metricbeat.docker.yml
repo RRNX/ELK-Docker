@@ -1,0 +1,15 @@
+metricbeat.modules:
+- module: system 
+  metricsets:
+    - "cpu"
+    - "diskio"
+    - "memory"
+    - "network"
+  period: 10s
+  enabled: true
+
+processors:
+  - add_cloud_metadata: ~
+
+output.logstash:
+  hosts: ["172.18.0.1:5044"]

@@ -1,0 +1,24 @@
+services:
+  elk:
+    image: sebp/elk
+    ports:
+      - "5601:5601"
+      - "9200:9200"
+      - "5044:5044"
+    environment:
+      TZ: Europe/Berlin
+      CLUSTER_NAME: elk@sonic
+      ES_HEAP_SIZE: 2g
+      LS_HEAP_SIZE: 1g
+    volumes:
+      - ./configs/logstash.docker.yml:/etc/logstash/conf.d/02-beats-input.conf:ro
+  metricbeat:
+    image: elastic/metricbeat:7.17.22
+    volumes:
+      - ./configs/metricbeat.docker.yml:/usr/share/metricbeat/metricbeat.yml:ro
+    depends_on:
+      - elk
+
+networks:
+  default:
+    driver: bridge
