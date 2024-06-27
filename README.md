@@ -9,7 +9,7 @@ Zur Umsetzung meiner Aufgabe nutze ich 2 Dockercontainer. Einer davon enthält d
 Die Einstellungen für die Container sind im configs Ordner. Eine weitere Einstellung die ich vorgenommen habe ist die Deaktivierung von SSL. Leider musste ich besonders im ELK Docker Image feststellen, dass die SSL Einstellung nicht so funktionierte, wie ich es bereits von dediziierten Servern kannte. Für eine Demo sollte das allerdings reichen. Andere wichtige Einstellung sind die Heap Sizes von ES und LS. Bei beiden Instanzen sollte man besonders darauf aufpassen, das beide Tools genügend Heap zur Verfügung haben, insbesondere wenn man größere Mengen an Daten verarbeiten muss. Besonders für Zeitlich relevante Daten ist die Einstellung der TimeZone ebenfalls von großer Bedeutung.
 
 # Nutzung
-Sind die Docker Container und alle damit verbundenen Services gestartet, kann man unter localhost:5601 Kibana erreichen und selber damit herumexperimentieren.
+Sind die Docker Container und alle damit verbundenen Services gestartet, kann man im Browser unter localhost:5601 Kibana erreichen und selber damit herumexperimentieren.
 
 # Dashboards
 Wie bereits zuvor erwähnt bietet Kibana die Möglichkeit Dashboards für die Daten zu erstellen. Ein einfaches Beispiel sieht man [hier](https://www.elastic.co/guide/en/kibana/current/images/lens_logsDashboard_8.4.0.png). Hier kommt es sehr darauf an, welche Daten genau visualisiert werden sollen.
